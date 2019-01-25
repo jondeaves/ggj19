@@ -8,6 +8,7 @@ public class movement : MonoBehaviour
 	public float speed = 5.0f;
 	public Rigidbody rb;
 	private bool moving;
+    public int playerNumber = 1;
 
 
 	// Start is called before the first frame update
@@ -20,8 +21,8 @@ public class movement : MonoBehaviour
 	void Update()
 	{
 		//check for movment input
-		float x = Input.GetAxis("Horizontal");
-		float y = Input.GetAxis("Vertical");
+		float x = Input.GetAxis("Horizontal " + playerNumber);
+		float y = Input.GetAxis("Vertical " + playerNumber);
 
 		//update movement and rotation
 		rb.velocity = new Vector3(x * speed, 0, y * speed);
@@ -31,14 +32,14 @@ public class movement : MonoBehaviour
 		moving = true;
 		Debug.Log("moving");
 
-		if (moving == true) ;
-		{
-			speed = speed + Time.deltaTime;
-			if (speed > 5.0f)
-			{
-				Debug.Log(gameObject.transform.position.x + " : " + speed);
-			}
-		}
+		//if (moving == true) ;
+		//{
+		//	speed = speed + Time.deltaTime;
+		//	if (speed > 5.0f)
+		//	{
+		//		Debug.Log(gameObject.transform.position.x + " : " + speed);
+		//	}
+		//}
 		//play movement animation while moving
 
 	}
