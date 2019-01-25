@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class movement : MonoBehaviour
 {
+    private const float INPUT_DEADZONE = 0.19f;
 
-	public float speed = 5.0f;
+	public float speed = 200.0f;
 	public Rigidbody rb;
-	private bool moving;
+	private bool m_IsMoving;
     public int playerNumber = 1;
 
 
@@ -15,34 +16,32 @@ public class movement : MonoBehaviour
 	void Start()
 	{
 		rb = GetComponent<Rigidbody>();
-	}
+        m_IsMoving = false;
+    }
 
 	// Update is called once per frame
 	void Update()
 	{
-		//check for movment input
-		float x = Input.GetAxis("Horizontal " + playerNumber);
-		float y = Input.GetAxis("Vertical " + playerNumber);
+        m_IsMoving = Input.GetAxis("Horizontal " + playerNumber) > INPUT_DEADZONE || Input.GetAxis("Horizontal " + playerNumber) < -INPUT_DEADZONE ||
+            Input.GetAxis("Vertical " + playerNumber) > INPUT_DEADZONE || Input.GetAxis("Vertical " + playerNumber) < -INPUT_DEADZONE;
 
-		//update movement and rotation
-		rb.velocity = new Vector3(x * speed, 0, y * speed);
+        if (!m_IsMoving)
+        {
+            rb.velocity = Vector3.zero;
+            transform.rotation = new Quaternion();
+            return;
+        }
 
-		transform.rotation = Quaternion.LookRotation(rb.velocity);
+        // check for movment input
+        float x = (Input.GetAxis("Horizontal " + playerNumber) * speed) * Time.deltaTime;
+		float y = (Input.GetAxis("Vertical " + playerNumber) * speed) * Time.deltaTime;
 
-		moving = true;
-		Debug.Log("moving");
+        //update movement and rotation if we are not within our deadzone
+        rb.velocity = new Vector3(x, 0, y);
 
-		//if (moving == true) ;
-		//{
-		//	speed = speed + Time.deltaTime;
-		//	if (speed > 5.0f)
-		//	{
-		//		Debug.Log(gameObject.transform.position.x + " : " + speed);
-		//	}
-		//}
-		//play movement animation while moving
+        transform.rotation = Quaternion.LookRotation(rb.velocity);
 
-	}
+    }
 
 }
 
