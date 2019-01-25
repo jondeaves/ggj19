@@ -11,7 +11,6 @@ public class movement : MonoBehaviour
 	private bool m_IsMoving;
     public int playerNumber = 1;
 
-
 	// Start is called before the first frame update
 	void Start()
 	{
