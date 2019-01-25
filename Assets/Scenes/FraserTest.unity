@@ -293,7 +293,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!114 &535401321
 MonoBehaviour:
@@ -308,6 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   rb: {fileID: 535401320}
+  playerNumber: 1
 --- !u!23 &535401322
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -608,7 +609,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!114 &1200091302
 MonoBehaviour:
@@ -623,6 +624,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   rb: {fileID: 1200091301}
+  playerNumber: 1
 --- !u!23 &1200091303
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -741,7 +743,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!114 &1332755535
 MonoBehaviour:
@@ -756,6 +758,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   rb: {fileID: 1332755534}
+  playerNumber: 1
 --- !u!23 &1332755536
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -867,6 +870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   rb: {fileID: 1653134094}
+  playerNumber: 1
 --- !u!23 &1653134096
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1013,7 +1017,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!114 &1950500879
 MonoBehaviour:
@@ -1028,6 +1032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   rb: {fileID: 1950500878}
+  playerNumber: 1
 --- !u!23 &1950500880
 MeshRenderer:
   m_ObjectHideFlags: 0

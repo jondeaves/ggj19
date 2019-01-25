@@ -8,8 +8,7 @@ public class movement : MonoBehaviour
 	public float speed = 5.0f;
 	public Rigidbody rb;
 	private bool moving;
-    public int playerNumber = 1;
-
+	public int playerNumber = 1;
 
 	// Start is called before the first frame update
 	void Start()
