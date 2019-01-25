@@ -1,0 +1,90 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 25.10.2016 17:17:46
+
+newmtl Material__27
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\Jarkko\Desktop\Dead Space Models\Suits\DS1\unilvl5_unpacked\textures\0042_isaaclevel5upperbody_cout.tga
+	map_Kd C:\Users\Jarkko\Desktop\Dead Space Models\Suits\DS1\unilvl5_unpacked\textures\0042_isaaclevel5upperbody_cout.tga
+	map_bump C:\Users\Jarkko\Desktop\Dead Space Models\Suits\DS1\unilvl5_unpacked\textures\0044_isaaclevel5upperbody_nout.tga
+	bump C:\Users\Jarkko\Desktop\Dead Space Models\Suits\DS1\unilvl5_unpacked\textures\0044_isaaclevel5upperbody_nout.tga
+
+newmtl Material__26
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\Jarkko\Desktop\Dead Space Models\Suits\DS1\unilvl5_unpacked\textures\0034_isaaclevel5lowerbody_cout.tga
+	map_Kd C:\Users\Jarkko\Desktop\Dead Space Models\Suits\DS1\unilvl5_unpacked\textures\0034_isaaclevel5lowerbody_cout.tga
+	map_bump C:\Users\Jarkko\Desktop\Dead Space Models\Suits\DS1\unilvl5_unpacked\textures\0036_isaaclevel5lowerbody_nout.tga
+	bump C:\Users\Jarkko\Desktop\Dead Space Models\Suits\DS1\unilvl5_unpacked\textures\0036_isaaclevel5lowerbody_nout.tga
+
+newmtl _0097_mesh_rig_parts_b_dismoutdefault
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+
+newmtl _0095_mesh_rig_main_tube_dismoutdefault
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+
+newmtl Material__28
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\Jarkko\Desktop\Dead Space Models\Suits\DS1\unilvl5_unpacked\textures\0000_grip_cout.tga
+	map_Kd C:\Users\Jarkko\Desktop\Dead Space Models\Suits\DS1\unilvl5_unpacked\textures\0000_grip_cout.tga
+	map_bump C:\Users\Jarkko\Desktop\Dead Space Models\Suits\DS1\unilvl5_unpacked\textures\0002_grip_nout.tga
+	bump C:\Users\Jarkko\Desktop\Dead Space Models\Suits\DS1\unilvl5_unpacked\textures\0002_grip_nout.tga
+
+newmtl Material__25
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\Jarkko\Desktop\Dead Space Models\Suits\DS1\unilvl5_unpacked\textures\0024_isaaclevel5helmet_cout.tga
+	map_Kd C:\Users\Jarkko\Desktop\Dead Space Models\Suits\DS1\unilvl5_unpacked\textures\0024_isaaclevel5helmet_cout.tga
+	map_bump C:\Users\Jarkko\Desktop\Dead Space Models\Suits\DS1\unilvl5_unpacked\textures\0028_isaaclevel5helmet_nout.tga
+	bump C:\Users\Jarkko\Desktop\Dead Space Models\Suits\DS1\unilvl5_unpacked\textures\0028_isaaclevel5helmet_nout.tga
