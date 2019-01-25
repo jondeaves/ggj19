@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  rb: {fileID: 0}
+  rb: {fileID: 1671298882}
 --- !u!23 &1671298884
 MeshRenderer:
   m_ObjectHideFlags: 0
