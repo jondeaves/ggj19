@@ -36,7 +36,7 @@ public class nodeAi : MonoBehaviour {
 		//update movement and rotation
 		//rb.velocity = new Vector3(x * speed, 0, y * speed);
 
-		transform.rotation = Quaternion.LookRotation(rb.velocity);
+		this.transform.LookAt(node[objectToGoTo].transform);
 
 		moving = true;
 		Debug.Log("moving");
