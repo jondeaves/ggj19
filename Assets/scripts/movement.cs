@@ -8,6 +8,7 @@ public class movement : MonoBehaviour
     public float speed = 5.0f;
     public Rigidbody rb;
     private bool moving = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +27,7 @@ public class movement : MonoBehaviour
         moving = true;
         Debug.Log("moving");
 
-        if (moving = true) ;
+        if (moving == true)
         {
             speed = speed + Time.deltaTime;
             if (speed > 5.0f)
@@ -34,6 +35,7 @@ public class movement : MonoBehaviour
                 Debug.Log(gameObject.transform.position.x + " : " + speed);
             }
         }
+
         //play movement animation while moving
 
     }
