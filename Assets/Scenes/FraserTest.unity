@@ -395,6 +395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7a96947732270b4a82730c5fea5207f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  happyDoggo: {fileID: 0}
   Speed: 150
   PlayerNumber: 1
 --- !u!23 &114383077
@@ -534,6 +535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7a96947732270b4a82730c5fea5207f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  happyDoggo: {fileID: 0}
   Speed: 150
   PlayerNumber: 1
 --- !u!23 &201855247
@@ -690,6 +692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7a96947732270b4a82730c5fea5207f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  happyDoggo: {fileID: 0}
   Speed: 150
   PlayerNumber: 1
 --- !u!23 &535401322
@@ -770,6 +773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7a96947732270b4a82730c5fea5207f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  happyDoggo: {fileID: 0}
   Speed: 150
   PlayerNumber: 1
 --- !u!114 &562810227
@@ -783,6 +787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85c2e8c4672d5427ca99c6220931b82b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  naughtyCorner: {fileID: 0}
 --- !u!135 &562810228
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -810,6 +815,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &562810232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 562810225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c9249033343340359d002528c4eab12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  justAte: 0
+  radius: 5
+  pullRadius: 5
+  pullForce: 2
 --- !u!1 &566726509
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,6 +960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7a96947732270b4a82730c5fea5207f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  happyDoggo: {fileID: 0}
   Speed: 150
   PlayerNumber: 1
 --- !u!23 &631710123
@@ -1079,6 +1100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7a96947732270b4a82730c5fea5207f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  happyDoggo: {fileID: 0}
   Speed: 150
   PlayerNumber: 1
 --- !u!23 &699478937
@@ -1484,6 +1506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7a96947732270b4a82730c5fea5207f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  happyDoggo: {fileID: 0}
   Speed: 150
   PlayerNumber: 1
 --- !u!23 &1167407742
@@ -1697,6 +1720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7a96947732270b4a82730c5fea5207f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  happyDoggo: {fileID: 0}
   Speed: 150
   PlayerNumber: 1
 --- !u!23 &1200091303
@@ -1900,6 +1924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7a96947732270b4a82730c5fea5207f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  happyDoggo: {fileID: 0}
   Speed: 150
   PlayerNumber: 1
 --- !u!23 &1332755536
@@ -2039,6 +2064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7a96947732270b4a82730c5fea5207f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  happyDoggo: {fileID: 0}
   Speed: 150
   PlayerNumber: 1
 --- !u!23 &1520097360
@@ -2178,6 +2204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7a96947732270b4a82730c5fea5207f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  happyDoggo: {fileID: 0}
   Speed: 150
   PlayerNumber: 1
 --- !u!23 &1752580399
@@ -2317,6 +2344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7a96947732270b4a82730c5fea5207f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  happyDoggo: {fileID: 0}
   Speed: 150
   PlayerNumber: 1
 --- !u!23 &1810902863
@@ -2423,7 +2451,7 @@ GameObject:
   - component: {fileID: 1930737025}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: thief
+  m_TagString: food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2582,6 +2610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7a96947732270b4a82730c5fea5207f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  happyDoggo: {fileID: 0}
   Speed: 150
   PlayerNumber: 1
 --- !u!23 &1950500880

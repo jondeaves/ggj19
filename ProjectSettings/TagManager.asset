@@ -10,6 +10,7 @@ TagManager:
   - loot
   - thief
   - door
+  - food
   layers:
   - Default
   - TransparentFX

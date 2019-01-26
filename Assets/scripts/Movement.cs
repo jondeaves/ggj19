@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+	public ScapFood happyDoggo;
+
     private const float INPUT_DEADZONE = 0.19f;
 
     [SerializeField]
@@ -20,6 +22,8 @@ public class Movement : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
+		GameObject dogoate = GameObject.FindGameObjectWithTag ("dog");
+
 		m_RigidBody = GetComponent<Rigidbody>();
         m_IsMoving = false;
     }
@@ -27,6 +31,12 @@ public class Movement : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		//check if dog ate
+		if (happyDoggo.justAte == true)
+		{
+			Speed *= 1.5f;
+		}
+
         m_IsMoving = Input.GetAxis("Horizontal " + PlayerNumber) > INPUT_DEADZONE || Input.GetAxis("Horizontal " + PlayerNumber) < -INPUT_DEADZONE ||
             Input.GetAxis("Vertical " + PlayerNumber) > INPUT_DEADZONE || Input.GetAxis("Vertical " + PlayerNumber) < -INPUT_DEADZONE;
 

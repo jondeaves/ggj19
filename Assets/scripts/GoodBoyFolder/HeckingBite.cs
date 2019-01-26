@@ -7,6 +7,8 @@ public class HeckingBite : MonoBehaviour {
 	bool biteRange;
 	GameObject gameObj;
 
+	public GameObject naughtyCorner;
+
 	[SerializeField]
 	private readonly int PlayerNumber = 1;
 
@@ -27,6 +29,10 @@ public class HeckingBite : MonoBehaviour {
 			{
 				gameObj.SetActive(false);
 			}
+			if (gameObj.tag == "AI") 
+			{
+				this.gameObject.transform.position = naughtyCorner.transform.position; 
+			}
 		}
 	}
 
@@ -34,10 +40,14 @@ public class HeckingBite : MonoBehaviour {
 	{
 		if (collision.gameObject.tag == "thief")
 		{
-			Debug.Log ("smellyBoy");
+			//Debug.Log ("smellyBoy");
 			biteRange = true;
 			gameObj = collision.gameObject;
 		}
-
+		if (collision.gameObject.tag == "AI") 
+		{
+			biteRange = true;
+			gameObj = collision.gameObject;
+		}
 	}
 }
