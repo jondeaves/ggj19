@@ -32,7 +32,7 @@ public class Movement : MonoBehaviour
 	void Update()
 	{
 		//check if dog ate
-		if (happyDoggo.justAte == true)
+		if (happyDoggo != null && happyDoggo.justAte == true)
 		{
 			Speed *= 1.5f;
 		}

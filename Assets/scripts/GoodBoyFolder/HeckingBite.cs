@@ -9,19 +9,20 @@ public class HeckingBite : MonoBehaviour {
 
 	public GameObject naughtyCorner;
 
-	[SerializeField]
-	private readonly int PlayerNumber = 1;
+	private int m_PlayerNumber;
 
 	// Use this for initialization
 	void Start ()
 	{
 		biteRange = false;
+        m_PlayerNumber = GetComponent<Movement>().PlayerNumber;
+
     }
 
 	// Update is called once per frame
 	void Update ()
     {
-		if (Input.GetButtonUp("Action " + PlayerNumber))
+		if (gameObj != null && Input.GetButtonUp("Action " + m_PlayerNumber))
 		{
 			Debug.LogFormat ("bork");
 			if (gameObj.tag == "thief")

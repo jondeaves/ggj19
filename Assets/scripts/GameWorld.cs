@@ -24,7 +24,6 @@ public class GameWorld : MonoBehaviour
         }
 
         float timeLeft = m_AudioSource.clip.length - m_AudioSource.time;
-        Debug.Log(timeLeft);
 
         if (timeLeft <= 0)
         {
