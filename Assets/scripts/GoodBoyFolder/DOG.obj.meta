@@ -1,0 +1,174 @@
+fileFormatVersion: 2
+guid: f385dcbd2bf4d4b02a3e4f6d4fc48f77
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: BODY_DOGgeo
+    100002: //RootNode
+    100004: DOGgeo_COLLAR1
+    100006: DOGgeo_COLLAR2
+    100008: DOGgeo_COLLAR3
+    100010: DOGgeo_EYEBROWS
+    100012: DOGgeo_EYES
+    100014: DOGgeo_HEAD
+    100016: DOGgeo_TONGUE
+    400000: BODY_DOGgeo
+    400002: //RootNode
+    400004: DOGgeo_COLLAR1
+    400006: DOGgeo_COLLAR2
+    400008: DOGgeo_COLLAR3
+    400010: DOGgeo_EYEBROWS
+    400012: DOGgeo_EYES
+    400014: DOGgeo_HEAD
+    400016: DOGgeo_TONGUE
+    2300000: BODY_DOGgeo
+    2300002: DOGgeo_COLLAR1
+    2300004: DOGgeo_COLLAR2
+    2300006: DOGgeo_COLLAR3
+    2300008: DOGgeo_EYEBROWS
+    2300010: DOGgeo_EYES
+    2300012: DOGgeo_HEAD
+    2300014: DOGgeo_TONGUE
+    3300000: BODY_DOGgeo
+    3300002: DOGgeo_COLLAR1
+    3300004: DOGgeo_COLLAR2
+    3300006: DOGgeo_COLLAR3
+    3300008: DOGgeo_EYEBROWS
+    3300010: DOGgeo_EYES
+    3300012: DOGgeo_HEAD
+    3300014: DOGgeo_TONGUE
+    4300000: BODY_DOGgeo
+    4300002: DOGgeo_COLLAR1
+    4300004: DOGgeo_COLLAR2
+    4300006: DOGgeo_COLLAR3
+    4300008: DOGgeo_EYEBROWS
+    4300010: DOGgeo_EYES
+    4300012: DOGgeo_HEAD
+    4300014: DOGgeo_TONGUE
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BODY_DOGgeoMat
+    second: {fileID: 2100000, guid: b2e92f47524f14abbb9363776bb501c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DOGgeo_COLLAR1Mat
+    second: {fileID: 2100000, guid: c8b1a50a67aa04e4fac9104b08a6156e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DOGgeo_COLLAR2Mat
+    second: {fileID: 2100000, guid: fbfff8c00b4014054b9b7062ce4f91b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DOGgeo_COLLAR3Mat
+    second: {fileID: 2100000, guid: e1e2e9fb038b44113aa493150b97c162, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DOGgeo_EYEBROWSMat
+    second: {fileID: 2100000, guid: 35f61514a6539476ba1bad071ac9ab97, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DOGgeo_EYESMat
+    second: {fileID: 2100000, guid: f289e619230814834aec310229abd8bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DOGgeo_HEADMat
+    second: {fileID: 2100000, guid: 8ba42398806774c838944e10606ac3c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DOGgeo_TONGUEMat
+    second: {fileID: 2100000, guid: ff7e46770dbe54cfb8e5fa2dc26bba04, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

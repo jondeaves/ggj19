@@ -1,0 +1,170 @@
+fileFormatVersion: 2
+guid: 35004255934254449bbaf8e48badcfc2
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: BODY
+    100002: COLLAR1
+    100004: COLLAR2
+    100006: COLLAR3
+    100008: //RootNode
+    100010: EYEBROWS
+    100012: EYES
+    100014: HEAD
+    100016: TONGUE
+    400000: BODY
+    400002: COLLAR1
+    400004: COLLAR2
+    400006: COLLAR3
+    400008: //RootNode
+    400010: EYEBROWS
+    400012: EYES
+    400014: HEAD
+    400016: TONGUE
+    2300000: BODY
+    2300002: COLLAR1
+    2300004: COLLAR2
+    2300006: COLLAR3
+    2300008: EYEBROWS
+    2300010: EYES
+    2300012: HEAD
+    2300014: TONGUE
+    3300000: BODY
+    3300002: COLLAR1
+    3300004: COLLAR2
+    3300006: COLLAR3
+    3300008: EYEBROWS
+    3300010: EYES
+    3300012: HEAD
+    3300014: TONGUE
+    4300000: BODY
+    4300002: HEAD
+    4300004: EYES
+    4300006: TONGUE
+    4300008: COLLAR1
+    4300010: COLLAR2
+    4300012: EYEBROWS
+    4300014: COLLAR3
+    9500000: //RootNode
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: COLLAR
+    second: {fileID: 2100000, guid: 0c5c8bcc437414903a49df372908fbcc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DOGFUR
+    second: {fileID: 2100000, guid: 20c0e2993dbc84ed69a4157a60195154, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DOGFUR1
+    second: {fileID: 2100000, guid: d7ca7541adfbc4bdabc76b4c36dc3897, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DOGFUR3
+    second: {fileID: 2100000, guid: 4f3b3b1e2cdd64c9baf35a2d132d2632, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NOSE_AND_EYES
+    second: {fileID: 2100000, guid: 3bae1a7e190f2417f862294e8b18314e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TAG
+    second: {fileID: 2100000, guid: 42d1f14910e3f4516b68b13901997df7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TONGUE1
+    second: {fileID: 2100000, guid: 6a59a1f5b5c98463b9e3cdd1a55d1c50, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
