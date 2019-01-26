@@ -16,22 +16,22 @@ public class HeckingBite : MonoBehaviour {
 	void Start ()
 	{
 		biteRange = false;
-	}
-	
-	// Update is called once per frame
-	void Update () 
-		{
+        m_PlayerNumber = GetComponent<Movement>().PlayerNumber;
+    }
 
-		if (Input.GetButtonUp("Action " + PlayerNumber))
+	// Update is called once per frame
+	void Update ()
+    {
+		if (Input.GetButtonUp("Action " + m_PlayerNumber))
 		{
 			Debug.LogFormat ("bork");
 			if (gameObj.tag == "thief")
 			{
 				gameObj.SetActive(false);
 			}
-			if (gameObj.tag == "AI") 
+			if (gameObj.tag == "AI")
 			{
-				this.gameObject.transform.position = naughtyCorner.transform.position; 
+				this.gameObject.transform.position = naughtyCorner.transform.position;
 			}
 		}
 	}
@@ -44,7 +44,7 @@ public class HeckingBite : MonoBehaviour {
 			biteRange = true;
 			gameObj = collision.gameObject;
 		}
-		if (collision.gameObject.tag == "AI") 
+		if (collision.gameObject.tag == "AI")
 		{
 			biteRange = true;
 			gameObj = collision.gameObject;

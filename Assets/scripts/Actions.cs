@@ -52,6 +52,7 @@ public class Actions : MonoBehaviour
             if (timeLeft <= 10)
             {
                 m_GameWorld.GetComponent<GameWorld>().AddEscapee(gameObject);
+                gameObject.SetActive(false);
                 Debug.Log("I haz won");
             }
             else

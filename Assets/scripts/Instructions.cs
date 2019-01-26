@@ -10,7 +10,7 @@ public class Instructions : MonoBehaviour
     {
         if (Input.GetMouseButtonUp(0) || Input.GetButtonUp("Submit"))
         {
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("JonD_Test");
         }
     }
 }
