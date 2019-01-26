@@ -2,19 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class nodeAi : MonoBehaviour {
-
-	//this behaviour is one to approach a tagged target and stay a set distance from it
-
-	//public GameObject[] node;
+public class nodejumper : MonoBehaviour {
 
 	public string searchTag;
 	public GameObject closest;
-	private Transform target;
+	public Transform target;
 	float wanderDistance;
 	public float safeDistance;
+	private bool safeToProceed;
 
-	//public int maxNodes;
+	public GameObject[] nodeArray;
+	public int useNodePls; 
 
 	public float speed = 0.1f;
 	public Rigidbody rb;
@@ -35,24 +33,71 @@ public class nodeAi : MonoBehaviour {
 		if(closest)
 			target = closest.transform;
 	}
-	
+
+	void CheckForObsticle()
+	{
+		//cast a ray to the safedistance, if obsticle is presenent move to node
+		RaycastHit hit;
+
+		if (Physics.Raycast (transform.position, -Vector3.up, out hit, safeDistance)) 
+		{
+			if (hit.transform.tag == "obsticle")
+			{
+				CheckForNode ();
+			}
+			safeToProceed = true;
+		}
+
+	}
+
+	void CheckForNode()
+	{
+		int maxLengh = nodeArray.Length;
+		float lastDist = 10.0f;
+		for (int i = 0; i < maxLengh; i++)
+			{
+				float distance = Vector3.Distance(this.transform.position, nodeArray[i].transform.position);
+				
+
+			if (distance < lastDist) 
+			{
+				lastDist = distance;
+				useNodePls = i;
+			}
+			}
+	}
+
 	// Update is called once per frame
 	void Update () 
 	{
 		transform.LookAt(target);
 
-		float distance = Vector3.Distance (transform.position, closest.transform.position);
+		CheckForObsticle ();
 
-		//if target is within a certain distance object flees, otherwise it just seeks
-		if (distance > safeDistance)
-		{
-			transform.Translate (Vector3.forward * speed * Time.deltaTime);
-		}
+		if (safeToProceed == true) {
+			float distance = Vector3.Distance (transform.position, closest.transform.position);
+
+			//if target is within a certain distance object flees, otherwise it just seeks
+			if (distance > safeDistance) {
+				transform.Translate (Vector3.forward * speed * Time.deltaTime);
+			} else {
+				transform.Translate (Vector3.back * (speed * (distance / safeDistance)) * Time.deltaTime);
+			}
+		} 
 		else 
 		{
-			transform.Translate (Vector3.back * (speed * (distance/safeDistance)) * Time.deltaTime);
-		}
+			target = nodeArray [useNodePls].transform;
+			transform.LookAt (target);
 
+			float distance = Vector3.Distance (transform.position, closest.transform.position);
+
+			//if target is within a certain distance object flees, otherwise it just seeks
+			if (distance > safeDistance) {
+				transform.Translate (Vector3.forward * speed * Time.deltaTime);
+			} else {
+				transform.Translate (Vector3.back * (speed * (distance / safeDistance)) * Time.deltaTime);
+			}
+		}
 
 		/* old code
 		 //check if ai has made it to it's actual goal
@@ -122,7 +167,7 @@ public class nodeAi : MonoBehaviour {
 		return closest;
 	}
 
-		/*old
+	/*old
 	void OnTriggerEnter(Collider other)
 	{
 		if (other.CompareTag("obsticle"))
