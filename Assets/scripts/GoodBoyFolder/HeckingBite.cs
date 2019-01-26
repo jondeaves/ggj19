@@ -9,22 +9,23 @@ public class HeckingBite : MonoBehaviour {
 
 	public GameObject naughtyCorner;
 
+	[FMODUnity.EventRef]
+	public string BiteEventFMOD;
 	private int m_PlayerNumber;
 
 	// Use this for initialization
 	void Start ()
 	{
 		biteRange = false;
-        m_PlayerNumber = GetComponent<Movement>().PlayerNumber;
-
-    }
+		m_PlayerNumber = GetComponent<Movement>().PlayerNumber;
+	}
 
 	// Update is called once per frame
 	void Update ()
     {
 		if (gameObj != null && Input.GetButtonUp("Action " + m_PlayerNumber))
 		{
-			Debug.LogFormat ("bork");
+			FMODUnity.RuntimeManager.PlayOneShot(BiteEventFMOD, transform.position);
 			if (gameObj.tag == "thief")
 			{
 				gameObj.SetActive(false);
