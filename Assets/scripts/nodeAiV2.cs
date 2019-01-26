@@ -43,7 +43,7 @@ public class nodeAiV2 : MonoBehaviour {
 			//check ray against what stored tag set in editor
 
 				if (Physics.Raycast (transform.position, transform.TransformDirection (Vector3.forward), out hit, Mathf.Infinity) && hit.transform.tag == nameTag1) {
-					Debug.Log ("imma not");
+					//Debug.Log ("imma not");
 					//if hit find the closest member of the array
 					//FindClosestArrayMember (arrayPointer);
 					SelectTarget (arrayPointer);
@@ -52,7 +52,7 @@ public class nodeAiV2 : MonoBehaviour {
 			if (heyBaby == true) 
 			{
 				if (Physics.Raycast (transform.position, transform.TransformDirection (Vector3.forward), out hit, Mathf.Infinity) && hit.transform.tag == nameTag2) {
-					Debug.Log ("imma not");
+					//Debug.Log ("imma not");
 					//if hit find the closest member of the array
 					//FindClosestArrayMember (arrayPointer);
 					SelectTarget (arrayPointer);
@@ -84,7 +84,7 @@ public class nodeAiV2 : MonoBehaviour {
 	//check if the ai is within a range of the target
 	bool InRange(bool inRange)
 	{
-		Debug.Log ("checking rangeee");
+		//Debug.Log ("checking rangeee");
 		Vector3 position1 = this.transform.position;
 		Vector3 position2 = nodeArray [arrayPointer].transform.position;
 		bool key1 = false;
@@ -109,7 +109,7 @@ public class nodeAiV2 : MonoBehaviour {
 	//movement function just moves towards the target
 	void moveStep()
 	{
-		Debug.Log ("we do a move");
+		//Debug.Log ("we do a move");
 		// Move our position a step closer to the target.
 		float step =  speed * Time.deltaTime; // calculate distance to move
 		this.transform.position = Vector3.MoveTowards(transform.position, nodeArray[arrayPointer].transform.position, step);
@@ -134,7 +134,7 @@ public class nodeAiV2 : MonoBehaviour {
 		RaycastHit hit;
 		if (Physics.Raycast (transform.position, transform.TransformDirection (Vector3.forward), out hit, Mathf.Infinity, layerMask)) {
 			Debug.DrawRay (transform.position, transform.TransformDirection (Vector3.forward) * hit.distance, Color.yellow);
-			Debug.Log ("did hit");
+			//Debug.Log ("did hit");
 			rayCastHit = true;
 		}
 		else 

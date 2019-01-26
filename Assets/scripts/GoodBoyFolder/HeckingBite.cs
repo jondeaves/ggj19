@@ -4,30 +4,40 @@ using UnityEngine;
 
 public class HeckingBite : MonoBehaviour {
 
+	bool biteRange;
+	GameObject gameObj;
+
 	[SerializeField]
 	private readonly int PlayerNumber = 1;
 
 	// Use this for initialization
 	void Start ()
 	{
-
+		biteRange = false;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 		{
 
-			if (Input.GetButtonUp("Action " + PlayerNumber))
+		if (Input.GetButtonUp("Action " + PlayerNumber))
+		{
+			Debug.LogFormat ("bork");
+			if (gameObj.tag == "thief")
 			{
-				Collider[] hitColliders = Physics.OverlapSphere(transform.position, 1.5f);
-
-				foreach (Collider col in hitColliders)
-				{
-					if (col.tag == "theif")
-					{
-						col.gameObject.SetActive(false);
-					}
-				}
+				gameObj.SetActive(false);
 			}
+		}
+	}
+
+	void OnCollisionStay(Collision collision)
+	{
+		if (collision.gameObject.tag == "thief")
+		{
+			Debug.Log ("smellyBoy");
+			biteRange = true;
+			gameObj = collision.gameObject;
+		}
+
 	}
 }
