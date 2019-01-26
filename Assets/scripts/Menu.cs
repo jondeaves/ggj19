@@ -7,24 +7,16 @@ using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
-    public Button m_SubmitBtn;
-    public Button m_QuitBtn;
-
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-        m_SubmitBtn.onClick.AddListener(OnSubmit);
-        m_QuitBtn.onClick.AddListener(OnQuit);
-    }
+        if (Input.GetMouseButtonUp(0) || Input.GetButtonUp("Submit"))
+        {
+            SceneManager.LoadScene("Instructions");
+        }
 
-    private void OnSubmit()
-    {
-        Debug.Log("Clicked");
-        SceneManager.LoadScene("Instructions");
-    }
-
-    private void OnQuit()
-    {
-        Application.Quit();
+        if (Input.GetMouseButtonUp(1) || Input.GetButtonUp("Cancel"))
+        {
+            Application.Quit();
+        }
     }
 }
