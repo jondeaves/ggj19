@@ -119,6 +119,12 @@ public class Door : MonoBehaviour
             case OpenDirection.Right:
                 isOpening = gameObject.transform.position.x >= m_EndPosition.x;
                 break;
+            case OpenDirection.Up:
+                isOpening = gameObject.transform.position.z >= m_EndPosition.z;
+                break;
+            case OpenDirection.Down:
+                isOpening = gameObject.transform.position.z <= m_EndPosition.z;
+                break;
         }
 
         return isOpening;
@@ -141,6 +147,12 @@ public class Door : MonoBehaviour
                 break;
             case OpenDirection.Right:
                 isOpening = gameObject.transform.position.x <= m_StartPosition.x;
+                break;
+            case OpenDirection.Up:
+                isOpening = gameObject.transform.position.z <= m_StartPosition.z;
+                break;
+            case OpenDirection.Down:
+                isOpening = gameObject.transform.position.z >= m_StartPosition.z;
                 break;
         }
 
@@ -169,17 +181,17 @@ public class Door : MonoBehaviour
                 );
                 break;
             case OpenDirection.Up:
-                endPos = gameObject.transform.position - new Vector3(
+                endPos = gameObject.transform.position + new Vector3(
                     0,
-                    gameObject.GetComponent<BoxCollider>().size.y * gameObject.transform.localScale.y,
-                    0
+                    0,
+                    gameObject.GetComponent<BoxCollider>().size.z * gameObject.transform.localScale.z
                 );
                 break;
             case OpenDirection.Down:
-                endPos = gameObject.transform.position + new Vector3(
+                endPos = gameObject.transform.position - new Vector3(
                     0,
-                    gameObject.GetComponent<BoxCollider>().size.y * gameObject.transform.localScale.y,
-                    0
+                    0,
+                    gameObject.GetComponent<BoxCollider>().size.z * gameObject.transform.localScale.z
                 );
                 break;
         }
