@@ -18,10 +18,13 @@ public class Movement : MonoBehaviour
 
     private Rigidbody m_RigidBody;
 	private bool m_IsMoving;
+	float speedHolder;
 
 	// Start is called before the first frame update
 	void Start()
 	{
+		
+		speedHolder = Speed;
 		GameObject dogoate = GameObject.FindGameObjectWithTag ("dog");
 
 		m_RigidBody = GetComponent<Rigidbody>();
@@ -32,9 +35,12 @@ public class Movement : MonoBehaviour
 	void Update()
 	{
 		//check if dog ate
-		if (happyDoggo != null && happyDoggo.justAte == true)
-		{
+		if (happyDoggo != null && happyDoggo.justAte == true) {
 			Speed *= 1.5f;
+		} 
+		else
+		{
+			Speed = speedHolder;
 		}
 
         m_IsMoving = Input.GetAxis("Horizontal " + PlayerNumber) > INPUT_DEADZONE || Input.GetAxis("Horizontal " + PlayerNumber) < -INPUT_DEADZONE ||

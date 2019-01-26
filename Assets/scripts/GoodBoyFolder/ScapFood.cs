@@ -11,10 +11,13 @@ public class ScapFood : MonoBehaviour {
 	public float pullRadius = 5.0f;
 	public float pullForce = 2.0f;
 	Rigidbody rb;
+	public float timeLeft = 30.0f;
+	float timeToUse = 0.0f;
 
 	// Use this for initialization
 	void Start () 
 	{
+		timeToUse = timeLeft;
 		rb.GetComponent<Rigidbody> ();
 	}
 	
@@ -33,6 +36,16 @@ public class ScapFood : MonoBehaviour {
 		if (this.transform.position == droppedFood.transform.position)
 		{
 			droppedFood.SetActive (false);
+			justAte = true;
+		}
+		if (justAte == true) 
+		{
+			timeLeft -= Time.deltaTime;
+			if(timeLeft < 0)
+			{
+				justAte = false;
+				timeLeft = timeToUse;
+			}
 		}
 	}
 			
