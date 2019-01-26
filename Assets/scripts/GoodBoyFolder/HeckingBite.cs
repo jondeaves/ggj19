@@ -16,13 +16,12 @@ public class HeckingBite : MonoBehaviour {
 	void Start ()
 	{
 		biteRange = false;
-        m_PlayerNumber = GetComponent<Movement>().PlayerNumber;
     }
 
 	// Update is called once per frame
 	void Update ()
     {
-		if (Input.GetButtonUp("Action " + m_PlayerNumber))
+		if (Input.GetButtonUp("Action " + PlayerNumber))
 		{
 			Debug.LogFormat ("bork");
 			if (gameObj.tag == "thief")

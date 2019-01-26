@@ -26,10 +26,9 @@ public class ScapFood : MonoBehaviour {
 		//if close enough move towards food
 		if (this.transform.position.x > droppedFood.transform.position.x - radius && this.transform.position.z < droppedFood.transform.position.z + radius)
 		{
-			foreach(Collider collider in Physics.OverlapSphere(transform.position, pullRadius));
 
-			Vector3 forceDirection = transform.position - collider.transform.position;
-			collider.rb.AddForce (forceDirection.normalized * pullForce * Time.deltaTime);
+			Vector3 forceDirection = transform.position - GetComponent<Collider>().transform.position;
+			rb.AddForce (forceDirection.normalized * pullForce * Time.deltaTime);
 		}
 		if (this.transform.position == droppedFood.transform.position)
 		{
