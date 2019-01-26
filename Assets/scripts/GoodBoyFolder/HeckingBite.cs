@@ -7,20 +7,19 @@ public class HeckingBite : MonoBehaviour {
 	bool biteRange;
 	GameObject gameObj;
 
-	[SerializeField]
-	private readonly int PlayerNumber = 1;
+	private int m_PlayerNumber = 1;
 
 	// Use this for initialization
 	void Start ()
 	{
 		biteRange = false;
-	}
+        m_PlayerNumber = GetComponent<Movement>().PlayerNumber;
+    }
 	
 	// Update is called once per frame
-	void Update () 
-		{
-
-		if (Input.GetButtonUp("Action " + PlayerNumber))
+	void Update ()
+    {
+		if (Input.GetButtonUp("Action " + m_PlayerNumber))
 		{
 			Debug.LogFormat ("bork");
 			if (gameObj.tag == "thief")

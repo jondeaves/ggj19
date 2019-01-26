@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: d195f8cbdad0146eb851cd4a56034b52
   - enabled: 1
     path: Assets/Scenes/Instructions.unity
@@ -14,4 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Victory.unity
+    guid: f88463a80be53485496b0a18477247c0
+  - enabled: 1
+    path: Assets/Scenes/Defeat.unity
+    guid: 0d2d2053972704530a352dc13620b7a4
+  - enabled: 1
+    path: Assets/Scenes/JonD_Test.unity
+    guid: 106b5dec6a2c3410f9244d69786929da
   m_configObjects: {}
