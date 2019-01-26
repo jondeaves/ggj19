@@ -9,6 +9,7 @@ TagManager:
   - dog
   - loot
   - thief
+  - door
   layers:
   - Default
   - TransparentFX
