@@ -5,43 +5,50 @@ using UnityEngine;
 public class movement : MonoBehaviour
 {
 
-	public float speed = 5.0f;
-	public Rigidbody rb;
-	private bool moving;
+  public float speed;
+  public Rigidbody rb;
+  private bool moving;
 
 
-	// Start is called before the first frame update
-	void Start()
-	{
-		rb = GetComponent<Rigidbody>();
-	}
+  // Start is called before the first frame update
+  void Start()
+  {
+    rb = GetComponent<Rigidbody>();
+  }
 
-	// Update is called once per frame
-	void Update()
-	{
-		//check for movment input
-		float x = Input.GetAxis("Horizontal");
-		float y = Input.GetAxis("Vertical");
+  // Update is called once per frame
+  void Update()
+  {
+    //check for movment input
+    float x = Input.GetAxis("Horizontal");
+    float y = Input.GetAxis("Vertical");
 
-		//update movement and rotation
-		rb.velocity = new Vector3(x * speed, 0, y * speed);
+    float frameIndependentSpeed = speed * Time.deltaTime;
 
-		transform.rotation = Quaternion.LookRotation(rb.velocity);
+    //update movement and rotation
+    rb.velocity = new Vector3
+    (
+        x * frameIndependentSpeed,
+        0,
+        y * frameIndependentSpeed
+    );
 
-		moving = true;
-		Debug.Log("moving");
+    transform.rotation = Quaternion.LookRotation(rb.velocity);
 
-		if (moving == true) ;
-		{
-			speed = speed + Time.deltaTime;
-			if (speed > 5.0f)
-			{
-				Debug.Log(gameObject.transform.position.x + " : " + speed);
-			}
-		}
-		//play movement animation while moving
+    moving = true;
+    // Debug.Log("moving");
 
-	}
+    // if (moving == true) ;
+    // {
+    // 	speed = speed * Time.deltaTime;
+    // 	if (speed > 5.0f)
+    // 	{
+    // 		Debug.Log(gameObject.transform.position.x + " : " + speed);
+    // 	}
+    // }
+    //play movement animation while moving
+
+  }
 
 }
 
