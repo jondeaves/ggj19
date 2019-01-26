@@ -20,27 +20,33 @@ public class nodeAiV2 : MonoBehaviour {
 
 	public bool rayCastHit;
 
+	private bool beingHandled = false;
+
+	int timeRemaining = 100;
+
 	// Use this for initialization
 	void Start () {
 		rayCastHit = false;
 		rb = GetComponent<Rigidbody>();
 		maxArrayValue = (nodeArray.Length);
 		SelectTarget (arrayPointer);
+
+
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		//turn to face target
-		transform.LookAt(target);
-		//cast check ray
-		castRay ();
-		//if hit check what it hit
-		if (rayCastHit == true)
-		{
-			RaycastHit hit;
-			int num;
-			//check ray against what stored tag set in editor
+		
+			//turn to face target
+			transform.LookAt (target);
+			//cast check ray
+			castRay ();
+			//if hit check what it hit
+			if (rayCastHit == true) {
+				RaycastHit hit;
+				int num;
+				//check ray against what stored tag set in editor
 
 				if (Physics.Raycast (transform.position, transform.TransformDirection (Vector3.forward), out hit, Mathf.Infinity) && hit.transform.tag == nameTag1) {
 					//Debug.Log ("imma not");
@@ -48,37 +54,52 @@ public class nodeAiV2 : MonoBehaviour {
 					//FindClosestArrayMember (arrayPointer);
 					SelectTarget (arrayPointer);
 				}
-				bool heyBaby  = (Random.value > 0.5f);
-			if (heyBaby == true) 
-			{
-				if (Physics.Raycast (transform.position, transform.TransformDirection (Vector3.forward), out hit, Mathf.Infinity) && hit.transform.tag == nameTag2) {
-					//Debug.Log ("imma not");
-					//if hit find the closest member of the array
-					//FindClosestArrayMember (arrayPointer);
-					SelectTarget (arrayPointer);
+				bool heyBaby = (Random.value > 0.5f);
+				if (heyBaby == true) {
+					if (Physics.Raycast (transform.position, transform.TransformDirection (Vector3.forward), out hit, Mathf.Infinity) && hit.transform.tag == nameTag2) {
+						//Debug.Log ("imma not");
+						//if hit find the closest member of the array
+						//FindClosestArrayMember (arrayPointer);
+						SelectTarget (arrayPointer);
+					}
 				}
-			}
 			//if not that tag then proceed as normal
 			else {
 					//move towards the target
 					moveStep ();
 				}
 
-		}
-		//reset rayCastHit to false to reset for next loop
-		rayCastHit = false;
+			}
+			//reset rayCastHit to false to reset for next loop
+			rayCastHit = false;
 
-		//check if we are withing safe distance of target
-		bool inRange = false;
-		InRange(inRange);
-		//if in range of target, give a new target, set inrange to false after
-		if (inRange == true) 
-		{
-			SelectTarget (arrayPointer);
-			inRange = false;
-		}
-		//if the initial raycast never hit anything either also move as normal
-		moveStep();
+			//check if we are withing safe distance of target
+			bool inRange = false;
+			InRange (inRange);
+			//if in range of target, give a new target, set inrange to false after
+			if (inRange == true) 
+			{
+				SelectTarget (arrayPointer);
+				inRange = false;
+			}
+			//if the initial raycast never hit anything either also move as normal
+
+		if (inRange == true) {
+			if (timeRemaining == 0)
+			{
+				timeRemaining = Random.Range(5, 20);
+			} 
+			else 
+			{
+				timeRemaining--;
+			}
+
+			} 
+			else 
+			{
+				moveStep ();
+			}
+		
 	}
 
 	//check if the ai is within a range of the target
@@ -123,6 +144,7 @@ public class nodeAiV2 : MonoBehaviour {
 		{
 			this.transform.Translate (Vector3.forward * (2.0f * (distance / DistanceToKeep)) * Time.deltaTime);
 		}
+
 	}
 
 	//raycast to see if we will collide with an object
