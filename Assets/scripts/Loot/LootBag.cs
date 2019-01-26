@@ -5,20 +5,21 @@ using UnityEngine;
 public class LootBag : MonoBehaviour
 {
     [SerializeField]
-    private List<GameObject> Loot;
+    [Tooltip("All items currently in the thiefs loot bag")]
+    public List<GameObject> Loot;
 
-    [SerializeField]
-    private readonly int PlayerNumber = 1;
+    private int m_PlayerNumber = 1;
 
     // Start is called before the first frame update
     void Start()
     {
+        m_PlayerNumber = GetComponent<Movement>().PlayerNumber;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonUp("Action " + PlayerNumber))
+        if (Input.GetButtonUp("Action " + m_PlayerNumber))
         {
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, 1.5f);
 

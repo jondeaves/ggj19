@@ -8,6 +8,7 @@ TagManager:
   - obsticle
   - dog
   - loot
+  - thief
   layers:
   - Default
   - TransparentFX
