@@ -922,7 +922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85c2e8c4672d5427ca99c6220931b82b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  naughtyCorner: {fileID: 0}
+  naughtyCorner: {fileID: 1403168170}
 --- !u!54 &1444914424
 Rigidbody:
   m_ObjectHideFlags: 0
