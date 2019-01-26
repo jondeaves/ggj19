@@ -12,5 +12,10 @@ public class Instructions : MonoBehaviour
         {
             SceneManager.LoadScene("JonD_Test");
         }
+
+        if (Input.GetMouseButtonUp(1) || Input.GetButtonUp("Cancel"))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 }
