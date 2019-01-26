@@ -1,11 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public enum OpenDirection
 {
     Left,
-    Right
+    Right,
+    Up,
+    Down
 }
 
 public enum DoorState
@@ -19,23 +19,17 @@ public enum DoorState
 public class Door : MonoBehaviour
 {
     public OpenDirection m_OpenDirection = OpenDirection.Left;
-    public float m_MoveSpeed = 5f;
+    public float m_MoveSpeed = 0.1f;
 
     private DoorState m_DoorState = DoorState.closed;
     private Vector3 m_StartPosition;
     private Vector3 m_EndPosition;
-    private Rigidbody m_RigidBody;
 
     // Start is called before the first frame update
     void Start()
     {
-        m_RigidBody = GetComponent<Rigidbody>();
         m_StartPosition = gameObject.transform.position;
-        m_EndPosition = gameObject.transform.position - new Vector3(
-            gameObject.GetComponent<BoxCollider>().size.x * gameObject.transform.localScale.x,
-            0,
-            0
-        );
+        m_EndPosition = GetEndPosition();
     }
 
     // Update is called once per frame
@@ -44,7 +38,7 @@ public class Door : MonoBehaviour
         bool hasHumanInProximity = false;
 
         // Find nearby 'apache helicopters'
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 1f);
+        Collider[] hitColliders = Physics.OverlapSphere(m_StartPosition, 1.4f);
 
         foreach (Collider col in hitColliders)
         {
@@ -55,6 +49,13 @@ public class Door : MonoBehaviour
         }
 
 
+        // IF closed or closing, put back to open/opening if proximity alert
+        if (m_DoorState == DoorState.closing && hasHumanInProximity)
+        {
+            m_DoorState = DoorState.opening;
+        }
+
+
         // If currently open/closed, then see if we need to trigger a change in state
         if (m_DoorState == DoorState.closed && hasHumanInProximity)
         {
@@ -62,33 +63,24 @@ public class Door : MonoBehaviour
         }
         else if (m_DoorState == DoorState.open && !hasHumanInProximity)
         {
-            Debug.Log("Closing door");
             m_DoorState = DoorState.closing;
         }
 
 
         // If opening/closing and reaches it's end point then we stop it
-        if (m_DoorState == DoorState.opening)
+        if (IsDoorOpened())
         {
-            if (gameObject.transform.position.x <= m_EndPosition.x)
-            {
-                m_DoorState = DoorState.open;
-            }
+            m_DoorState = DoorState.open;
         }
-        else if (m_DoorState == DoorState.closing)
+        else if (IsDoorClosed())
         {
-            if (gameObject.transform.position.x >= m_StartPosition.x)
-            {
-                m_DoorState = DoorState.closed;
-            }
+            m_DoorState = DoorState.closed;
         }
 
 
         // If we are statically open/closed, then we do not want to do a velocity
         if (m_DoorState == DoorState.closed || m_DoorState == DoorState.open)
         {
-            Debug.Log("We are where we need to be");
-            m_RigidBody.velocity = Vector3.zero;
             return;
         }
 
@@ -106,10 +98,94 @@ public class Door : MonoBehaviour
         }
 
 
-        //update movement and rotation if we are not within our deadzone
-        m_RigidBody.velocity = normalizedDirectionVector;
+        gameObject.transform.position += normalizedDirectionVector * m_MoveSpeed;
 
-        Debug.Log(normalizedDirectionVector);
-        
+    }
+
+    private bool IsDoorOpened()
+    {
+        if (m_DoorState != DoorState.opening)
+        {
+            return false;
+        }
+
+
+        bool isOpening = false;
+        switch (m_OpenDirection)
+        {
+            case OpenDirection.Left:
+                isOpening = gameObject.transform.position.x <= m_EndPosition.x;
+                break;
+            case OpenDirection.Right:
+                isOpening = gameObject.transform.position.x >= m_EndPosition.x;
+                break;
+        }
+
+        return isOpening;
+
+    }
+
+    private bool IsDoorClosed()
+    {
+        if (m_DoorState != DoorState.closing)
+        {
+            return false;
+        }
+
+
+        bool isOpening = false;
+        switch (m_OpenDirection)
+        {
+            case OpenDirection.Left:
+                isOpening = gameObject.transform.position.x >= m_StartPosition.x;
+                break;
+            case OpenDirection.Right:
+                isOpening = gameObject.transform.position.x <= m_StartPosition.x;
+                break;
+        }
+
+        return isOpening;
+
+    }
+
+    private Vector3 GetEndPosition()
+    {
+        Vector3 endPos = Vector3.zero;
+
+        switch (m_OpenDirection)
+        {
+            case OpenDirection.Left:
+                endPos = gameObject.transform.position - new Vector3(
+                    gameObject.GetComponent<BoxCollider>().size.x * gameObject.transform.localScale.x,
+                    0,
+                    0
+                );
+                break;
+            case OpenDirection.Right:
+                endPos = gameObject.transform.position + new Vector3(
+                    gameObject.GetComponent<BoxCollider>().size.x * gameObject.transform.localScale.x,
+                    0,
+                    0
+                );
+                break;
+            case OpenDirection.Up:
+                endPos = gameObject.transform.position - new Vector3(
+                    0,
+                    gameObject.GetComponent<BoxCollider>().size.y * gameObject.transform.localScale.y,
+                    0
+                );
+                break;
+            case OpenDirection.Down:
+                endPos = gameObject.transform.position + new Vector3(
+                    0,
+                    gameObject.GetComponent<BoxCollider>().size.y * gameObject.transform.localScale.y,
+                    0
+                );
+                break;
+        }
+
+
+        Debug.Log(m_EndPosition);
+        return endPos;
     }
 }
