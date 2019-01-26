@@ -11,7 +11,10 @@ public class nodeAiV2 : MonoBehaviour {
 	private Rigidbody rb;
 	public int arrayPointer;
 	private int maxArrayValue;
-	public string nameTag;
+	public string nameTag1;
+	public string nameTag2;
+
+	private bool heyBaby;
 
 	private Transform target;
 
@@ -36,20 +39,31 @@ public class nodeAiV2 : MonoBehaviour {
 		if (rayCastHit == true)
 		{
 			RaycastHit hit;
+			int num;
 			//check ray against what stored tag set in editor
-			if (Physics.Raycast (transform.position, transform.TransformDirection (Vector3.forward), out hit, DistanceToKeep) && hit.transform.tag == nameTag) 
+
+				if (Physics.Raycast (transform.position, transform.TransformDirection (Vector3.forward), out hit, Mathf.Infinity) && hit.transform.tag == nameTag1) {
+					Debug.Log ("imma not");
+					//if hit find the closest member of the array
+					//FindClosestArrayMember (arrayPointer);
+					SelectTarget (arrayPointer);
+				}
+				bool heyBaby  = (Random.value > 0.5f);
+			if (heyBaby == true) 
 			{
-				//if hit find the closest member of the array
-				FindClosestArrayMember (arrayPointer);
+				if (Physics.Raycast (transform.position, transform.TransformDirection (Vector3.forward), out hit, Mathf.Infinity) && hit.transform.tag == nameTag2) {
+					Debug.Log ("imma not");
+					//if hit find the closest member of the array
+					//FindClosestArrayMember (arrayPointer);
+					SelectTarget (arrayPointer);
+				}
 			}
 			//if not that tag then proceed as normal
-			else 
-			{
-				//move towards the target
-				moveStep ();
-			}
-		//if the initial raycast never hit anything either also move as normal
-			moveStep();
+			else {
+					//move towards the target
+					moveStep ();
+				}
+
 		}
 		//reset rayCastHit to false to reset for next loop
 		rayCastHit = false;
@@ -63,21 +77,24 @@ public class nodeAiV2 : MonoBehaviour {
 			SelectTarget (arrayPointer);
 			inRange = false;
 		}
+		//if the initial raycast never hit anything either also move as normal
+		moveStep();
 	}
 
 	//check if the ai is within a range of the target
 	bool InRange(bool inRange)
 	{
+		Debug.Log ("checking rangeee");
 		Vector3 position1 = this.transform.position;
 		Vector3 position2 = nodeArray [arrayPointer].transform.position;
 		bool key1 = false;
 		bool key2 = false;
 
-		if (position1.x > position2.x - 2 & position1.x < position2.x + 2) 
+		if (position1.x > position2.x - 5 && position1.x < position2.x + 5) 
 		{
 			key1 = true;
 		}
-		if (position1.z > position2.z - 2 & position1.z < position2.z + 2) 
+		if (position1.z > position2.z - 5 && position1.z < position2.z + 5) 
 		{
 			key2 = true;
 		}
@@ -92,6 +109,7 @@ public class nodeAiV2 : MonoBehaviour {
 	//movement function just moves towards the target
 	void moveStep()
 	{
+		Debug.Log ("we do a move");
 		// Move our position a step closer to the target.
 		float step =  speed * Time.deltaTime; // calculate distance to move
 		this.transform.position = Vector3.MoveTowards(transform.position, nodeArray[arrayPointer].transform.position, step);
@@ -100,11 +118,8 @@ public class nodeAiV2 : MonoBehaviour {
 
 		float distance = Vector3.Distance (transform.position, nodeArray[arrayPointer].transform.position);
 
-
-		if (distance > DistanceToKeep) {
-			this.transform.Translate (Vector3.forward * (3.0f * (distance / DistanceToKeep)) * Time.deltaTime);
-		}
-		else 
+		this.transform.Translate (Vector3.forward * (3.0f * (distance / DistanceToKeep)) * Time.deltaTime);
+		if (distance < DistanceToKeep) 
 		{
 			this.transform.Translate (Vector3.forward * (2.0f * (distance / DistanceToKeep)) * Time.deltaTime);
 		}
@@ -119,13 +134,13 @@ public class nodeAiV2 : MonoBehaviour {
 		RaycastHit hit;
 		if (Physics.Raycast (transform.position, transform.TransformDirection (Vector3.forward), out hit, Mathf.Infinity, layerMask)) {
 			Debug.DrawRay (transform.position, transform.TransformDirection (Vector3.forward) * hit.distance, Color.yellow);
-			//Debug.Log ("did hit");
+			Debug.Log ("did hit");
 			rayCastHit = true;
 		}
 		else 
 		{
 			Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
-			Debug.Log("Did not Hit");
+			//Debug.Log("Did not Hit");
 		}
 
 	}
