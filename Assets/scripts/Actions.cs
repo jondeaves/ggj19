@@ -46,7 +46,7 @@ public class Actions : MonoBehaviour
             col.gameObject.SetActive(false);
         }
 
-        if (col.tag == "door")
+        if (col.tag == "exit")
         {
             float timeLeft = m_GameWorld.GetComponentInChildren<AudioSource>().clip.length - m_GameWorld.GetComponentInChildren<AudioSource>().time;
             if (timeLeft <= 10)
