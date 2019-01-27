@@ -415,11 +415,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1494968842419364}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7a96947732270b4a82730c5fea5207f, type: 3}
+  m_Script: {fileID: 11500000, guid: e9ce6d36663824c9c87e36b0c84e5b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  happyDoggo: {fileID: 0}
-  Speed: 150
+  m_Speed: 0.1
+  m_TurnSpeed: 5
   PlayerNumber: 1
 --- !u!114 &114556453602976820
 MonoBehaviour:
@@ -433,7 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85c2e8c4672d5427ca99c6220931b82b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  naughtyCorner: {fileID: 0}
+  barkParticleSystem: {fileID: 0}
   biteEventFMOD: event:/sfx/dog/bite
   barkEventFMOD: event:/sfx/dog/bark
   wrongBiteEventFMOD: event:/sfx/dog/wrong_bite

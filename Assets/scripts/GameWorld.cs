@@ -17,7 +17,6 @@ public class GameWorld : MonoBehaviour
 
     private void Update()
     {
-
         if (Debug.isDebugBuild && (Input.GetButtonUp("Cancel")))
         {
             gameTimeElapsedSeconds = 55f;
@@ -26,7 +25,9 @@ public class GameWorld : MonoBehaviour
         gameTimeElapsedSeconds += Time.deltaTime;
         float timeLeft = gameDurationSeconds - gameTimeElapsedSeconds;
 
-        if (timeLeft <= 0)
+        int thiefsRemaining = GameObject.FindGameObjectsWithTag("thief").Length;
+
+        if (timeLeft <= 0 || thiefsRemaining == 0)
         {
 
             float totalValue = 0f;

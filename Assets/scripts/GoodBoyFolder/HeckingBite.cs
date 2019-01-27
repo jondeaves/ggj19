@@ -3,11 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HeckingBite : MonoBehaviour {
-	public bool biteRange;
-	GameObject gameObj;
 	public ParticleSystem barkParticleSystem;
-
-	public GameObject naughtyCorner;
 
 	[FMODUnity.EventRef]
 	public string biteEventFMOD;
@@ -18,39 +14,42 @@ public class HeckingBite : MonoBehaviour {
 	[FMODUnity.EventRef]
 	public string wrongBiteEventFMOD;
 
+
+	private GameObject m_BiteTarget;
+	private GameObject m_NaughtyCorner;
 	private int m_PlayerNumber;
 
 	// Use this for initialization
 	void Start ()
 	{
-		biteRange = false;
-		m_PlayerNumber = GetComponent<Movement>().PlayerNumber;
+		m_PlayerNumber = GetComponent<MovementV2>().PlayerNumber;
+		m_NaughtyCorner = GameObject.FindWithTag("NaughtyCorner");
 	}
 
 	// Update is called once per frame
 	void Update ()
-    {
+	{
 		if (Input.GetButtonDown("Action " + m_PlayerNumber))
 		{
 			FMODUnity.RuntimeManager.PlayOneShot(barkEventFMOD, transform.position);
 			barkParticleSystem.Play();
 
-			if (gameObj != null)
+			if (m_BiteTarget != null)
 			{
-				string tag = gameObj.tag;
+				string tag = m_BiteTarget.tag;
 
 				if (tag == "thief")
 				{
 					FMODUnity.RuntimeManager.PlayOneShot(biteEventFMOD, transform.position);
-					gameObj.SetActive(false);
+					m_BiteTarget.SetActive(false);
 				}
 				if (tag == "AI")
 				{
 					FMODUnity.RuntimeManager.PlayOneShot(wrongBiteEventFMOD, transform.position);
-					this.gameObject.transform.position = naughtyCorner.transform.position;
+					this.gameObject.transform.position = m_NaughtyCorner.transform.position;
 				}
 
-				gameObj = null;
+				m_BiteTarget = null;
 			}
 		}
 	}
@@ -59,14 +58,11 @@ public class HeckingBite : MonoBehaviour {
 	{
 		if (collision.gameObject.tag == "thief")
 		{
-			//Debug.Log ("smellyBoy");
-			biteRange = true;
-			gameObj = collision.gameObject;
+			m_BiteTarget = collision.gameObject;
 		}
 		if (collision.gameObject.tag == "AI")
 		{
-			biteRange = true;
-			gameObj = collision.gameObject;
+			m_BiteTarget = collision.gameObject;
 		}
 	}
 }

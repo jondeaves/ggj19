@@ -9,7 +9,7 @@ public class Defeat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponentInChildren<Text>().text = "Bad boy! Someone has gotten away with £" + GameData.valueOfStolenGoods + " worth of our family memories!";
+        GetComponentInChildren<Text>().text = "Bad boy! Someone has gotten away with " + GameData.valueOfStolenGoods + " coins worth of our family memories!";
     }
 
     private void Update()
