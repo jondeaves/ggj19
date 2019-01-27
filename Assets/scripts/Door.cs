@@ -184,7 +184,7 @@ public class Door : MonoBehaviour
                 endPos = gameObject.transform.position + new Vector3(
                     0,
                     0,
-                    gameObject.GetComponent<BoxCollider>().size.z * gameObject.transform.localScale.z
+                    gameObject.GetComponent<BoxCollider>().size.y * gameObject.transform.localScale.y
                 );
                 break;
             case OpenDirection.Down:
