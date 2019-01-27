@@ -8,13 +8,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainLevel.unity
     guid: 99c9720ab356a0642a771bea13969a05
-    path: Assets/Scenes/MainMenu.unity
-    guid: d195f8cbdad0146eb851cd4a56034b52
   - enabled: 1
     path: Assets/Scenes/Instructions.unity
     guid: 248b4dd825db548a1b5c03da7b70a551
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/MainMenu.unity
+    guid: d195f8cbdad0146eb851cd4a56034b52
+  - enabled: 1
+    path: Assets/Scenes/MainLevel.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/Scenes/Victory.unity
@@ -25,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/JonD_Test.unity
     guid: 106b5dec6a2c3410f9244d69786929da
+  - enabled: 1
+    path: Assets/Scenes/PersistentMusicScene.unity
+    guid: 46281ec85dd44449d89f17ea68bef649
   m_configObjects: {}

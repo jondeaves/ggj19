@@ -37,7 +37,7 @@ MonoBehaviour:
   - {fileID: 114220827613353126}
   StringsBanks:
   - {fileID: 114724096825531140}
-  stringsBankWriteTime: 636841166550000000
+  stringsBankWriteTime: 636841435410000000
   cacheVersion: 3
 --- !u!114 &114100124128732378
 MonoBehaviour:
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: /Users/vladislavveselinov/Documents/GitHub/ggj19/Assets/FMODProject/Build/Desktop/sfx.bank
-  lastModified: 636841166580000000
+  lastModified: 636841435410000000
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: /Users/vladislavveselinov/Documents/GitHub/ggj19/Assets/FMODProject/Build/Desktop/Master
     Bank.bank
-  lastModified: 636841166550000000
+  lastModified: 636841435410000000
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -194,6 +194,22 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 17449
+--- !u!114 &114415447295976168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: winner
+  Min: 0
+  Max: 3
+  Default: 0
 --- !u!114 &114431114711232426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,6 +272,22 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 514
+--- !u!114 &114469020114905042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: winner
+  Min: 0
+  Max: 3
+  Default: 0
 --- !u!114 &114517397918562424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,12 +306,12 @@ MonoBehaviour:
   - {fileID: 114682958886819440}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters:
-  - {fileID: 114431410540737524}
+  - {fileID: 114920008581108564}
   MinDistance: 0
   MaxDistance: 0
-  Length: 76000
+  Length: 95000
 --- !u!114 &114635736183713074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,11 +371,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: /Users/vladislavveselinov/Documents/GitHub/ggj19/Assets/FMODProject/Build/Desktop/music.bank
-  lastModified: 636841166570000000
+  lastModified: 636841435410000000
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 1088384
+    Value: 1089280
   Exists: 1
 --- !u!114 &114688029852882044
 MonoBehaviour:
@@ -392,6 +424,22 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 692
+--- !u!114 &114704285621400014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: winner
+  Min: 0
+  Max: 3
+  Default: 0
 --- !u!114 &114724096825531140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,12 +453,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets/FMODProject/Build/Desktop/Master Bank.strings.bank
-  lastModified: 636841166550000000
+  lastModified: 636841435410000000
   LoadResult: 0
   FileSizes:
   - Name: 
     Value: 1590
   Exists: 1
+--- !u!114 &114766185927540292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: winner
+  Min: 0
+  Max: 3
+  Default: 0
 --- !u!114 &114800797727661718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,6 +498,38 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 692
+--- !u!114 &114866497671918926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: winner
+  Min: 0
+  Max: 3
+  Default: 0
+--- !u!114 &114920008581108564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: winner
+  Min: 0
+  Max: 3
+  Default: 0
 --- !u!114 &114920198795000686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -470,7 +566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: /Users/vladislavveselinov/Documents/GitHub/ggj19/Assets/FMODProject/Build/Desktop/ui.bank
-  lastModified: 636841166580000000
+  lastModified: 636841435410000000
   LoadResult: 0
   FileSizes:
   - Name: 
