@@ -3199,7 +3199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_GameWorld: {fileID: 0}
-  lootEventFMOD: 
+  lootEventFMOD: event:/sfx/burglar/item_pickup
 --- !u!114 &1433737325
 MonoBehaviour:
   m_ObjectHideFlags: 0
