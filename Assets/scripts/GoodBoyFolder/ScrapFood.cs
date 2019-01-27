@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScapFood : MonoBehaviour {
+public class ScrapFood : MonoBehaviour {
 
 	public bool justAte;
 
@@ -18,7 +18,7 @@ public class ScapFood : MonoBehaviour {
 	void Start () 
 	{
 		timeToUse = timeLeft;
-		rb.GetComponent<Rigidbody> ();
+		rb = gameObject.GetComponent<Rigidbody> ();
 	}
 	
 	// Update is called once per frame
@@ -27,13 +27,13 @@ public class ScapFood : MonoBehaviour {
 		//look for dropped food
 		droppedFood = GameObject.FindWithTag("food");
 		//if close enough move towards food
-		if (this.transform.position.x > droppedFood.transform.position.x - radius && this.transform.position.z < droppedFood.transform.position.z + radius)
+		if (droppedFood != null && this.transform.position.x > droppedFood.transform.position.x - radius && this.transform.position.z < droppedFood.transform.position.z + radius)
 		{
 
 			Vector3 forceDirection = transform.position - GetComponent<Collider>().transform.position;
 			rb.AddForce (forceDirection.normalized * pullForce * Time.deltaTime);
 		}
-		if (this.transform.position == droppedFood.transform.position)
+		if (droppedFood != null && this.transform.position == droppedFood.transform.position)
 		{
 			droppedFood.SetActive (false);
 			justAte = true;

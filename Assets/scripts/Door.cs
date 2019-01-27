@@ -197,7 +197,6 @@ public class Door : MonoBehaviour
         }
 
 
-        Debug.Log(m_EndPosition);
         return endPos;
     }
 }
