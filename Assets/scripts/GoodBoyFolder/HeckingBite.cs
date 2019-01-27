@@ -32,22 +32,28 @@ public class HeckingBite : MonoBehaviour {
 		if (Input.GetButtonDown("Action " + m_PlayerNumber))
 		{
 			FMODUnity.RuntimeManager.PlayOneShot(barkEventFMOD, transform.position);
-			barkParticleSystem.Play();
+
+            if (barkParticleSystem)
+            {
+                barkParticleSystem.Play();
+            }
+
 
 			if (m_BiteTarget != null)
 			{
-				string tag = m_BiteTarget.tag;
+				string targetTag = m_BiteTarget.tag;
 
-				if (tag == "thief")
+				if (targetTag == "thief")
 				{
 					FMODUnity.RuntimeManager.PlayOneShot(biteEventFMOD, transform.position);
 					m_BiteTarget.SetActive(false);
 				}
-				if (tag == "AI")
+				if (targetTag == "AI")
 				{
 					FMODUnity.RuntimeManager.PlayOneShot(wrongBiteEventFMOD, transform.position);
 					this.gameObject.transform.position = m_NaughtyCorner.transform.position;
-				}
+                    m_BiteTarget.SetActive(false);
+                }
 
 				m_BiteTarget = null;
 			}

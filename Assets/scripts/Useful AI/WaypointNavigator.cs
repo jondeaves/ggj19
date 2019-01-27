@@ -56,8 +56,8 @@ public class WaypointNavigator : MonoBehaviour
 
         if (Vector3.Distance(transform.position, m_CurrentWaypoint.transform.position) <= 1f)
         {
-            //m_NextWaypoint = FindConnectedWaypoint();
-            m_CurrentWaypoint = FindClosestWaypoint();
+            m_NextWaypoint = FindNextWaypoint();
+            //m_CurrentWaypoint = FindClosestWaypoint();
             //if (m_NextWaypoint != null)
             //{ 
             //    //m_CurrentWaypoint = m_NextWaypoint;
@@ -109,56 +109,54 @@ public class WaypointNavigator : MonoBehaviour
     {
         Waypoint[] connectedWaypoints = m_CurrentWaypoint.GetComponent<Waypoint>().m_Neighbors;
 
-        Debug.Log(connectedWaypoints.Length);
+        //Debug.Log(connectedWaypoints.Length);
 
         //Debug.Log(m_CurrentWaypoint);
         //Debug.Log(m_CurrentWaypoint.name);
         //Debug.Log(connectedWaypoints.Length);
 
-        return null;
+        //return null;
 
-        //Waypoint closestWaypoint = null;
+        GameObject closestWaypoint = null;
 
-        //foreach (GameObject wpObj in allWaypoints)
-        //{
-        //    Waypoint wp = wpObj.GetComponent<Waypoint>();
+        foreach (Waypoint wp in connectedWaypoints)
+        {
+            if (wp != null)
+            {
+                if (closestWaypoint == null && (m_CurrentWaypoint == null || wp.name != m_CurrentWaypoint.name))
+                {
+                    closestWaypoint = wp.gameObject;
+                }
+                else if (m_CurrentWaypoint == null || wp.name != m_CurrentWaypoint.name)
+                {
+                    float distanceFromCurrentWaypoint = Vector3.Distance(wp.transform.position, transform.position);
+                    float distanceFromClosestSoFar = Vector3.Distance(closestWaypoint.transform.position, transform.position);
 
-        //    if (wp != null)
-        //    {
-        //        if (closestWaypoint == null && (m_CurrentWaypoint == null || wp.name != m_CurrentWaypoint.name))
-        //        {
-        //            closestWaypoint = wp;
-        //        }
-        //        else if (m_CurrentWaypoint == null || wp.name != m_CurrentWaypoint.name)
-        //        {
-        //            float distanceFromCurrentWaypoint = Vector3.Distance(wp.transform.position, transform.position);
-        //            float distanceFromClosestSoFar = Vector3.Distance(closestWaypoint.transform.position, transform.position);
+                    if (distanceFromCurrentWaypoint < distanceFromClosestSoFar)
+                    {
+                        closestWaypoint = wp.gameObject;
+                    }
+                }
+            }
+        }
 
-        //            if (distanceFromCurrentWaypoint < distanceFromClosestSoFar)
-        //            {
-        //                closestWaypoint = wp;
-        //            }
-        //        }
-        //    }
-        //}
-
-        //return closestWaypoint;
+        return closestWaypoint;
     }
 
-    //private Waypoint FindNextWaypoint()
-    //{
-    //    m_NextWaypoint = null;
+    private GameObject FindNextWaypoint()
+    {
+        GameObject nextWaypoint = null;
 
-    //    //Debug.Log("Looking for next waypoint after: " + m_CurrentWaypoint.name + " which has: " + m_CurrentWaypoint.m_Neighbors.Length + " neighbors");
+        //Debug.Log("Looking for next waypoint after: " + m_CurrentWaypoint.name + " which has: " + m_CurrentWaypoint.m_Neighbors.Length + " neighbors");
 
-    //    if (m_CurrentWaypoint != null && m_CurrentWaypoint.m_Neighbors.Length > 0)
-    //    {
-    //        m_NextWaypoint = m_CurrentWaypoint.m_Neighbors[
-    //            m_Random.Next(0, m_CurrentWaypoint.m_Neighbors.Length - 1)
-    //        ];
-    //    }
+        if (m_CurrentWaypoint != null && m_CurrentWaypoint.GetComponent<Waypoint>().m_Neighbors.Length > 0)
+        {
+            nextWaypoint = m_CurrentWaypoint.GetComponent<Waypoint>().m_Neighbors[
+                m_Random.Next(0, m_CurrentWaypoint.GetComponent<Waypoint>().m_Neighbors.Length - 1)
+            ].gameObject;
+        }
 
-    //    Debug.Log("Found next waypoint: " + m_NextWaypoint.name);
-    //    return m_NextWaypoint;
-    //}
+        Debug.Log("Found next waypoint: " + nextWaypoint.name);
+        return nextWaypoint;
+    }
 }
