@@ -13,7 +13,7 @@ public class Actions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_PlayerNumber = GetComponent<Movement>().PlayerNumber;
+        m_PlayerNumber = GetComponent<MovementV2>().PlayerNumber;
         m_LootBag = GetComponent<LootBag>().Loot;
     }
 

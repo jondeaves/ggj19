@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScapFood : MonoBehaviour {
+public class ScrapFood : MonoBehaviour {
 
 	public bool justAte;
 

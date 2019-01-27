@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-	public ScapFood happyDoggo;
+	public ScrapFood happyDoggo;
 
     private const float INPUT_DEADZONE = 0.19f;
 

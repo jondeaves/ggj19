@@ -17,15 +17,15 @@ public class GameWorld : MonoBehaviour
 
     private void Update()
     {
-
         if (Debug.isDebugBuild && (Input.GetButtonUp("Cancel")))
         {
             m_AudioSource.time = 55f;
         }
 
         float timeLeft = m_AudioSource.clip.length - m_AudioSource.time;
+        int thiefsRemaining = GameObject.FindGameObjectsWithTag("thief").Length;
 
-        if (timeLeft <= 0)
+        if (timeLeft <= 0 || thiefsRemaining == 0)
         {
 
             float totalValue = 0f;
