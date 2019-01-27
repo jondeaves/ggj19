@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Instructions : MonoBehaviour
 {
-    public string gameLevelName = "JonD_Test";
+    public string gameLevelName = "JonD_Test_House";
 
     void Update()
     {

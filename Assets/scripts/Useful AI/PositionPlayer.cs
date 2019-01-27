@@ -38,15 +38,6 @@ public class PositionPlayer : MonoBehaviour
                 }
                 break;
         }
-
-        if (Input.GetJoystickNames().Length == 2)
-        {
-
-        }
-
-        Debug.Log(Input.GetJoystickNames().Length);
-
-        Debug.Log(GetComponent<MovementV2>().PlayerNumber);
     }
 
     private Vector3 RandomNavSphere()

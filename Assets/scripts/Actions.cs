@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,7 +26,7 @@ public class Actions : MonoBehaviour
     {
         if (Input.GetButtonUp("Action " + m_PlayerNumber))
         {
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, 1f);
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, 2f);
 
             foreach (Collider col in hitColliders)
             {
@@ -50,9 +51,11 @@ public class Actions : MonoBehaviour
             FMODUnity.RuntimeManager.PlayOneShot(lootEventFMOD, transform.position);
         }
 
+        Debug.Log(col.tag);
+
         if (col.tag == "exit")
         {
-            float timeLeft = m_GameWorld.GetComponentInChildren<AudioSource>().clip.length - m_GameWorld.GetComponentInChildren<AudioSource>().time;
+            float timeLeft = m_GameWorld.GetComponent<GameWorld>().m_TimeLeft;
             if (timeLeft <= 10)
             {
                 m_GameWorld.GetComponent<GameWorld>().AddEscapee(gameObject);
