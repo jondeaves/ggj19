@@ -13,6 +13,11 @@ public class GameWorld : MonoBehaviour
     void Start()
     {
         m_EscapedThiefs = new List<GameObject>();
+        
+        if (MusicManager.Instance != null)
+        {
+            MusicManager.Instance.SetMusicState(MusicState.Default);
+        }
     }
 
     private void Update()

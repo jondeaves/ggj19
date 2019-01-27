@@ -38,17 +38,27 @@ public class MusicManager : MonoBehaviour
     }
 
     void Start()
-    {
+    {   
         if (!GameData.isMusicPlaying)
         {
             musicEventInstance = FMODUnity.RuntimeManager.CreateInstance(MusicEventFMOD);
 
-            // if (!muteMusic)
-            // {
-                SetMusicState(MusicState.Default);
+            if (!muteMusic)
+            {
                 musicEventInstance.start();
-                // GameData.isMusicPlaying = true;
-            // }
+                GameData.isMusicPlaying = true;
+            }
+        }
+
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            SetMusicState(MusicState.Menu);
+
+            FMOD.Studio.PLAYBACK_STATE playbackState;
+            musicEventInstance.getPlaybackState(out playbackState);
+
+            Debug.Log(playbackState);
+
         }
     }
 
