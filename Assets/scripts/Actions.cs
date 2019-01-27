@@ -10,6 +10,9 @@ public class Actions : MonoBehaviour
     private List<GameObject> m_LootBag;
     private int m_PlayerNumber = 1;
 
+    [FMODUnity.EventRef]
+	public string lootEventFMOD;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +47,7 @@ public class Actions : MonoBehaviour
             Debug.Log("Thief got some loot");
             m_LootBag.Add(col.gameObject);
             col.gameObject.SetActive(false);
+            FMODUnity.RuntimeManager.PlayOneShot(lootEventFMOD, transform.position);
         }
 
         if (col.tag == "exit")
