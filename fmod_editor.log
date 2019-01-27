@@ -11,7 +11,7 @@
 [WRN] SystemI::init                            : Output requires a sample rate of 44100Hz, resampling will occur.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0x10fb0c808 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0x1663e0208 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -28,44 +28,13 @@
 [LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
 [LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
 [LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] SoundI::release                          :  (0x14bf58578)
-[LOG] SoundI::release                          :     dog_win (0x14bf57c38)
-[LOG] SoundI::release                          :  (0x14bf176b8)
-[LOG] SoundI::release                          :     burglar_win (0x14bf40a28)
-[LOG] SoundI::release                          :  (0x14bf45da8)
-[LOG] SoundI::release                          :     menu_music (0x14bf776e8)
-[LOG] SoundI::release                          :  (0x13fcbd428)
-[LOG] SoundI::release                          :     Animal, Dog, Australian Cattle, Barks, Snarling SND0584 (0x13fc049d8)
-[LOG] SoundI::release                          :  (0x13fc14d98)
-[LOG] SoundI::release                          :     Animal, Dog, Australian Cattle, Barks, Snarling SND0584 1 (0x13fc47dc8)
-[LOG] SoundI::release                          :  (0x13fc86398)
-[LOG] SoundI::release                          :     bwork01 (0x13fc30988)
-[LOG] SoundI::release                          :  (0x142a58288)
-[LOG] SoundI::release                          :     bwork02 (0x14c02ec48)
-[LOG] SoundI::release                          :  (0x13fcdece8)
-[LOG] SoundI::release                          :     bwork03 (0x13fc9beb8)
-[LOG] SoundI::release                          :  (0x13fc6ce78)
-[LOG] SoundI::release                          :     bwork04 (0x13fc96b98)
-[LOG] SoundI::release                          :  (0x13fc9d538)
-[LOG] SoundI::release                          :     bwork05 (0x13fca7818)
-[LOG] SoundI::release                          :  (0x13fc46128)
-[LOG] SoundI::release                          :     bwork06 (0x13fc6bcc8)
-[LOG] SoundI::release                          :  (0x13fc62558)
-[LOG] SoundI::release                          :     bwork07 (0x13fc6fd88)
-[LOG] SoundI::release                          :  (0x14c007ce8)
-[LOG] SoundI::release                          :     Cartoon, Bite, Munch 1 SND15096 (0x14c007e58)
-[LOG] SoundI::release                          :  (0x14c009a68)
-[LOG] SoundI::release                          :     Human, Vocal, Male, Grunt, Ouch, Pain 2 SND23309 (0x14c0079a8)
-[LOG] Thread::callback                         : FMOD Studio update thread finished.
-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
-[LOG] LiveUpdate::release                      : 
-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
-[LOG] Thread::callback                         : FMOD stream thread finished.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] SystemI::close                           : Closed.
+[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 3
+[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] Manager::readBank                        : fileversion = 103, compatVersion = 99 (oldest = 44, newest = 103)
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
