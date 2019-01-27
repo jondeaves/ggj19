@@ -5,24 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class GameWorld : MonoBehaviour
 {
+    public float gameTimeElapsedSeconds = 0;
+    public float gameDurationSeconds = 60;
     private List<GameObject> m_EscapedThiefs;
-    private AudioSource m_AudioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         m_EscapedThiefs = new List<GameObject>();
-        m_AudioSource = GetComponentInChildren<AudioSource>();
     }
 
     private void Update()
     {
         if (Debug.isDebugBuild && (Input.GetButtonUp("Cancel")))
         {
-            m_AudioSource.time = 55f;
+            gameTimeElapsedSeconds = 55f;
         }
 
-        float timeLeft = m_AudioSource.clip.length - m_AudioSource.time;
+        gameTimeElapsedSeconds += Time.deltaTime;
+        float timeLeft = gameDurationSeconds - gameTimeElapsedSeconds;
+
         int thiefsRemaining = GameObject.FindGameObjectsWithTag("thief").Length;
 
         if (timeLeft <= 0 || thiefsRemaining == 0)
@@ -43,13 +45,23 @@ public class GameWorld : MonoBehaviour
 
             if (totalValue > 0)
             {
+                if (MusicManager.Instance)
+                {
+                    MusicManager.Instance.SetMusicState(MusicState.BurglarWin);
+                }
+
                 SceneManager.LoadScene("Defeat");
                 Debug.Log("Bad boy! Someone has gotten away with £" + totalValue + " worth of our family memories!");
             }
             else
             {
+                if (MusicManager.Instance)
+                {
+                    MusicManager.Instance.SetMusicState(MusicState.DogWin);
+                }
+
                 SceneManager.LoadScene("Victory");
-                Debug.Log("Such a Hackin Good Boy, you've kept the house safe from thiefs.");
+                Debug.Log("Such a Heckin Good Boy, you've kept the house safe from thieves.");
             }
         }
     }

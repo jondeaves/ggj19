@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class Instructions : MonoBehaviour
 {
-    // Update is called once per frame
+    public string gameLevelName = "JonD_Test";
+
     void Update()
     {
         if (Input.GetMouseButtonUp(0) || Input.GetButtonUp("Submit"))
         {
-            SceneManager.LoadScene("JonD_Test");
+            SceneManager.LoadScene(gameLevelName);
         }
 
         if (Input.GetMouseButtonUp(1) || Input.GetButtonUp("Cancel"))

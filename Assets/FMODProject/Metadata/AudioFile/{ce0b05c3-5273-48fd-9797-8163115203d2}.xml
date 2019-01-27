@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{ce0b05c3-5273-48fd-9797-8163115203d2}">
+        <property name="assetPath">
+            <value>Human, Coughing, Male SND12821.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>192</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>1.1848177083333333</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{2c0bfb92-5725-4939-bd50-0e9d83d048e8}</destination>
+        </relationship>
+    </object>
+</objects>

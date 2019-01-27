@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{8a4f4db2-a7ae-4840-b55e-17480922b138}">
+        <property name="assetPath">
+            <value>Door, Wood, Old, Creaks, Open, Close, Slam Shut SND3033 7.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>96</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.39432291666666669</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{2c0bfb92-5725-4939-bd50-0e9d83d048e8}</destination>
+        </relationship>
+    </object>
+</objects>
