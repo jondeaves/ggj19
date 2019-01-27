@@ -3,14 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HeckingBite : MonoBehaviour {
-
-	bool biteRange;
+	public bool biteRange;
 	GameObject gameObj;
+	public ParticleSystem barkParticleSystem;
 
 	public GameObject naughtyCorner;
 
 	[FMODUnity.EventRef]
-	public string BiteEventFMOD;
+	public string biteEventFMOD;
+
+	[FMODUnity.EventRef]
+	public string barkEventFMOD;
+
+	[FMODUnity.EventRef]
+	public string wrongBiteEventFMOD;
+
 	private int m_PlayerNumber;
 
 	// Use this for initialization
@@ -23,16 +30,27 @@ public class HeckingBite : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-		if (gameObj != null && Input.GetButtonUp("Action " + m_PlayerNumber))
+		if (Input.GetButtonDown("Action " + m_PlayerNumber))
 		{
-			FMODUnity.RuntimeManager.PlayOneShot(BiteEventFMOD, transform.position);
-			if (gameObj.tag == "thief")
+			FMODUnity.RuntimeManager.PlayOneShot(barkEventFMOD, transform.position);
+			barkParticleSystem.Play();
+
+			if (gameObj != null)
 			{
-				gameObj.SetActive(false);
-			}
-			if (gameObj.tag == "AI")
-			{
-				this.gameObject.transform.position = naughtyCorner.transform.position;
+				string tag = gameObj.tag;
+
+				if (tag == "thief")
+				{
+					FMODUnity.RuntimeManager.PlayOneShot(biteEventFMOD, transform.position);
+					gameObj.SetActive(false);
+				}
+				if (tag == "AI")
+				{
+					FMODUnity.RuntimeManager.PlayOneShot(wrongBiteEventFMOD, transform.position);
+					this.gameObject.transform.position = naughtyCorner.transform.position;
+				}
+
+				gameObj = null;
 			}
 		}
 	}

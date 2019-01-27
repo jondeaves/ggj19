@@ -174,7 +174,7 @@
             <value>-4</value>
         </property>
         <property name="name">
-            <value>Audio 1</value>
+            <value>ouch</value>
         </property>
         <relationship name="effectChain">
             <destination>{f0dcefd6-e5be-4839-a5f0-07548dcd0ee1}</destination>

@@ -44,13 +44,21 @@ public class GameWorld : MonoBehaviour
 
             if (totalValue > 0)
             {
-                MusicManager.Instance.SetMusicState(MusicState.BurglarWin);
+                if (MusicManager.Instance)
+                {
+                    MusicManager.Instance.SetMusicState(MusicState.BurglarWin);
+                }
+
                 SceneManager.LoadScene("Defeat");
                 Debug.Log("Bad boy! Someone has gotten away with £" + totalValue + " worth of our family memories!");
             }
             else
             {
-                MusicManager.Instance.SetMusicState(MusicState.DogWin);
+                if (MusicManager.Instance)
+                {
+                    MusicManager.Instance.SetMusicState(MusicState.DogWin);
+                }
+
                 SceneManager.LoadScene("Victory");
                 Debug.Log("Such a Heckin Good Boy, you've kept the house safe from thieves.");
             }
