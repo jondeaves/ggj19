@@ -3,6 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HeckingBite : MonoBehaviour {
+	public ParticleSystem barkParticleSystem;
+
+	[FMODUnity.EventRef]
+	public string biteEventFMOD;
+
+	[FMODUnity.EventRef]
+	public string barkEventFMOD;
+
+	[FMODUnity.EventRef]
+	public string wrongBiteEventFMOD;
+
 
 	private GameObject m_BiteTarget;
 	private GameObject m_NaughtyCorner;
@@ -11,25 +22,34 @@ public class HeckingBite : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-        m_PlayerNumber = GetComponent<MovementV2>().PlayerNumber;
-        m_NaughtyCorner = GameObject.FindWithTag("NaughtyCorner");
-
-    }
+		m_PlayerNumber = GetComponent<MovementV2>().PlayerNumber;
+		m_NaughtyCorner = GameObject.FindWithTag("NaughtyCorner");
+	}
 
 	// Update is called once per frame
 	void Update ()
-    {
-		if (m_BiteTarget != null && Input.GetButtonUp("Action " + m_PlayerNumber))
+	{
+		if (Input.GetButtonDown("Action " + m_PlayerNumber))
 		{
-			Debug.LogFormat ("bork");
-			if (m_BiteTarget.tag == "thief")
+			FMODUnity.RuntimeManager.PlayOneShot(barkEventFMOD, transform.position);
+			barkParticleSystem.Play();
+
+			if (m_BiteTarget != null)
 			{
-				m_BiteTarget.SetActive(false);
-			}
-			if (m_BiteTarget.tag == "AI")
-			{
-                m_BiteTarget.SetActive(false);
-				this.gameObject.transform.position = m_NaughtyCorner.transform.position;
+				string tag = m_BiteTarget.tag;
+
+				if (tag == "thief")
+				{
+					FMODUnity.RuntimeManager.PlayOneShot(biteEventFMOD, transform.position);
+					m_BiteTarget.SetActive(false);
+				}
+				if (tag == "AI")
+				{
+					FMODUnity.RuntimeManager.PlayOneShot(wrongBiteEventFMOD, transform.position);
+					this.gameObject.transform.position = m_NaughtyCorner.transform.position;
+				}
+
+				m_BiteTarget = null;
 			}
 		}
 	}
