@@ -9,5 +9,6 @@ public class NaughtyCorner : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawSphere(transform.position, 0.1f);
+        Handles.Label(transform.position, name);
     }
 }
