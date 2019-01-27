@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameWorld : MonoBehaviour
 {
+    public float m_TimeLeft = 60;
     public float gameTimeElapsedSeconds = 0;
     public float gameDurationSeconds = 60;
     private List<GameObject> m_EscapedThiefs;
@@ -23,11 +24,11 @@ public class GameWorld : MonoBehaviour
         }
 
         gameTimeElapsedSeconds += Time.deltaTime;
-        float timeLeft = gameDurationSeconds - gameTimeElapsedSeconds;
+        m_TimeLeft = gameDurationSeconds - gameTimeElapsedSeconds;
 
         int thiefsRemaining = GameObject.FindGameObjectsWithTag("thief").Length;
 
-        if (timeLeft <= 0 || thiefsRemaining == 0)
+        if (m_TimeLeft <= 0 || thiefsRemaining == 0)
         {
 
             float totalValue = 0f;

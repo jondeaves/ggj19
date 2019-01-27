@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PersistentMusicScene.unity
     guid: 46281ec85dd44449d89f17ea68bef649
+  - enabled: 1
+    path: Assets/Scenes/JonD_Test_House.unity
+    guid: cc070c8c2ebff43228058666d41bfd68
   m_configObjects: {}
